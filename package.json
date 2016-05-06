@@ -9,7 +9,11 @@
   "author": "Tomio Mizoroki",
   "license": "ISC",
   "dependencies": {
+    "angular": "^1.4.4",
+    "angular-route": "^1.4.4",
+    "angularfire": "^1.1.2",
     "bootstrap": "^3.3.6",
+    "firebase": "^2.2.4",
     "jquery": "^1.11.3"
   }
 }
