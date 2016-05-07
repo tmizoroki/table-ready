@@ -5,16 +5,29 @@
     .module('app.waitList')
     .controller('WaitListController', WaitListController);
   
-  function WaitListController() {
+  WaitListController.$inject = ['$firebaseArray'];
+  
+  function WaitListController($firebaseArray) {
     var vm = this;
 
-    vm.parties = [1, 2, 3, 4];
+    var fireParties = new Firebase('https://table-ready.firebaseio.com/parties');
     
+    function Party() {
+      this.name = '';
+      this.phone = '';
+      this.size = '';
+      this.done = false;
+      this.notify = false;
+    }
+    
+    vm.newParty = new Party();
+    vm.parties = $firebaseArray(fireParties);
     vm.addParty = addParty;
     
     function addParty() {
-      vm.parties.push('another');
+      vm.parties.$add(vm.newParty);
     }
+    
   }
   
 }());
