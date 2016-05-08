@@ -23,7 +23,7 @@
   <tbody>
     <tr ng-repeat="party in vm.parties">
       <td>
-        <input type="checkbox">
+        <input ng-model="party.done" ng-change="vm.toggleDone(party)" type="checkbox">
       </td>
       <td>
         <div>{{ party.name }} - {{party.size}} {{party.size > 1 ? "people" : "person"}}</div>
