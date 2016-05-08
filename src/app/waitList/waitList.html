@@ -22,7 +22,9 @@
   </thead>
   <tbody>
     <tr ng-repeat="party in vm.parties">
-      <td><!--Checkbox--></td>
+      <td>
+        <input type="checkbox">
+      </td>
       <td>
         <div>{{ party.name }} - {{party.size}} {{party.size > 1 ? "people" : "person"}}</div>
         <div>{{ party.phone }}</div>
@@ -31,7 +33,7 @@
         <div>{{ party.notified ? "Yes" : "No" }}</div>
       </td>
       <td>
-        <button ng-click"vm.sendTextMessage(party)" class="btn btn-success">Send SMS</button>
+        <button ng-click="vm.sendTextMessage(party)" class="btn btn-success">Send SMS</button>
         <button ng-click="vm.removeParty(party)" class="btn btn-danger">Remove</button>
       </td>
     </tr>
