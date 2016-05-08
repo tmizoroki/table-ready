@@ -5,10 +5,24 @@
     .module('app.auth')
     .controller('AuthController', AuthController);
   
-  AuthController.$inject = [];
+  AuthController.$inject = ['$firebaseAuth'];
   
-  function AuthController() {
+  function AuthController($firebaseAuth) {
+    var vm = this;
     
+    var firebaseReference = new Firebase("https://table-ready.firebaseio.com/");
+    var firebaseAuthObject = $firebaseAuth(firebaseReference);
+    
+    vm.user = {
+      email: "",
+      password: ""
+    }
+    
+    vm.register = register;
+
+    function register(user) {
+      return firebaseAuthObject.createUser(user);
+    }
   }
   
 }());
