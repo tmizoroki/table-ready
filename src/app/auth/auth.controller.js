@@ -26,7 +26,13 @@
     }
     
     function login(user) {
-      return firebaseAuthObject.$authWithPassword(user);
+      return firebaseAuthObject.$authWithPassword(user)
+        .then(function(loggedInUser){
+          console.log(loggedInUser)
+        })
+        .catch(function(error) {
+          console.log(error)
+        });
     }
   }
   
