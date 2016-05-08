@@ -13,14 +13,6 @@
     var fireParties = new Firebase(FIREBASE_URL + 'parties');
     var fireTextMessages = new Firebase(FIREBASE_URL + 'textMessages');
     
-    function Party() {
-      this.name = '';
-      this.phone = '';
-      this.size = '';
-      this.done = false;
-      this.notified = false;
-    }
-    
     vm.newParty = new Party();
     vm.parties = $firebaseArray(fireParties);
     vm.addParty = addParty;
