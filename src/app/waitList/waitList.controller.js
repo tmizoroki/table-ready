@@ -18,7 +18,7 @@
       this.phone = '';
       this.size = '';
       this.done = false;
-      this.notify = false;
+      this.notified = false;
     }
     
     vm.newParty = new Party();
@@ -42,8 +42,11 @@
         phoneNumber: party.phone,
         size: party.size
       }
-    }
-    
+      fireTextMessages.push(newTextMessage);
+      party.notified = true;
+      vm.parties.$save(party);
+    }  
   }
+    
   
 }());
