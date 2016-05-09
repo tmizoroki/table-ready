@@ -10,14 +10,14 @@
       templateUrl: 'app/layout/navbar.html',
       restrict: 'E',
       scope: {},
-      controller: NavBarController,
+      controller: NavbarController,
       controllerAs: 'vm'
     }
   }
   
-  NavBarController.$inject = ['$location', 'authService'];
+  NavbarController.$inject = ['$location', 'authService'];
   
-  function NavBarController($location, authService) {
+  function NavbarController($location, authService) {
     var vm = this;
     
     vm.isLoggedIn = authService.isLoggedIn;
