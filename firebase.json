@@ -2,8 +2,6 @@
   "firebase": "table-ready",
   "public": "src",
   "ignore": [
-    "firebase.json",
-    "**/.*",
-    "**/node_modules/**"
+    "firebase.json"
   ]
 }
