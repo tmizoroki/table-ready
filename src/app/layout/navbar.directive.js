@@ -3,9 +3,9 @@
   
   angular
     .module('app.layout')
-    .directive('trNavbar', trNavbar);
+    .directive('tmNavbar', tmNavbar);
   
-  function trNavbar() {
+  function tmNavbar() {
     return {
       templateUrl: 'app/layout/navbar.html',
       restrict: 'E',
